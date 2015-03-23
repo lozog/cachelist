@@ -1,0 +1,5 @@
+# C++ Files
+*.d
+*.o
+cachelist
+Makefile
