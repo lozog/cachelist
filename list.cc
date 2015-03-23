@@ -14,6 +14,7 @@ List::~List() {
     }
 }
 
+// inserts data at the front of the list
 void List::insert(int data){
     Node* newNode = new Node(data, head);
     head = newNode;
@@ -33,9 +34,11 @@ int List::search(int data) {
     else return -1;
 }
 
+// removes data from list, if it exists
 void List::remove(int data) {
     Node* temp = head;
     if (temp == NULL) {
+        // check if list is empty
         return;
     } else {
         if (temp->data == data) {
@@ -46,6 +49,7 @@ void List::remove(int data) {
             return;
         }
         while (temp->next != NULL) {
+            // iterate through list
             if (temp->next->data == data) {
                 Node* toDelete = temp->next;
                 temp->next = temp->next->next;

@@ -5,13 +5,11 @@
 class Node;
 
 class List {
-    //friend class Node;
     Node* head;
     int sizeOfList;
 public:
     List();
     ~List();
-    //Node const * getHead() const;
 
     void insert(int data);
     int search(int data);

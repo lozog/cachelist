@@ -6,13 +6,7 @@
 Node::Node(int data, Node* next): data(data), next(next) {}
 
 
-Node::~Node() {
-    #if 0
-    if (next != NULL)
-
-    delete(next);
-#endif
-}
+Node::~Node() {}
 
 
 int Node::getData() {
@@ -22,6 +16,8 @@ int Node::getData() {
 Node* Node::getNext() {
     return next;
 }
+
+// custom memory management to facilitate caching
 
 void* Node::operator new (size_t size) {
     assert (size == sizeof(Node));

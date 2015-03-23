@@ -12,7 +12,7 @@ public:
 
     void* newNode();
     void recycle(void* mem);
-    void purge();
+    void empty();
 };
 
 

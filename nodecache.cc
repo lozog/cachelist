@@ -9,7 +9,7 @@ NodeCache::NodeCache() : size(0) {
 }
 
 NodeCache::~NodeCache() {
-    purge();
+    empty();
 }
 
 
@@ -35,10 +35,9 @@ void NodeCache::recycle(void* mem) {
     size++;
 }
 
-void NodeCache::purge() {
+void NodeCache::empty() {
     while(head != NULL){
         char* mem = reinterpret_cast<char*>(head); // head was allocated as a char array
-        //std::cerr << head->data << std::endl;
         head = head->next;
         ::delete[] mem;
     }

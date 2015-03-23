@@ -5,6 +5,7 @@
 class NodeCache;
 
 class Node {
+    //allow List and NodeCache to access Node private fields
     friend class List;
     friend class NodeCache;
 
