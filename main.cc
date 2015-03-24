@@ -1,6 +1,5 @@
 #include <iostream>
 #include <iomanip>
-#include <sstream>
 #include "list.h"
 #include "nodecache.h"
 #include "node.h"
