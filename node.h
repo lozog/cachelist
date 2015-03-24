@@ -23,6 +23,8 @@ public:
     int getData();
     Node* getNext();
 
+    int getReusedCount();
+
 };
 
 

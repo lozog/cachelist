@@ -30,3 +30,6 @@ void Node::operator delete(void* mem) {
     }
 }
 
+int Node::getReusedCount() {
+    return cache.getReusedCount();
+}

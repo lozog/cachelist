@@ -4,7 +4,7 @@
 
 class Node;
 
-NodeCache::NodeCache() : size(0) {
+NodeCache::NodeCache() : size(0), reusedCount(0) {
     head = NULL;
 }
 
@@ -18,17 +18,18 @@ void* NodeCache::newNode() {
         void * mem = head;
         head = head->next;
         size--;
-        std::cerr << "Reusing a node" << std::endl;
+        // std::cerr << "Reusing a node" << std::endl;
+        reusedCount += 1;
         return mem;
     } else {
         // global new
-        std::cerr << "Allocating new node" << std::endl;
+        // std::cerr << "Allocating new node" << std::endl;
         return ::new char[sizeof(Node)]; // allocate as char array
     }
 }
 
 void NodeCache::recycle(void* mem) {
-    std::cerr << "Adding node to cache" << std::endl;
+    // std::cerr << "Adding node to cache" << std::endl;
     Node* toRecycle = static_cast<Node*>(mem); // must cast to a Node*, since operator delete takes in a void*
     toRecycle->next = head;
     head = toRecycle;
@@ -41,4 +42,8 @@ void NodeCache::empty() {
         head = head->next;
         ::delete[] mem;
     }
+}
+
+int NodeCache::getReusedCount() {
+    return reusedCount;
 }

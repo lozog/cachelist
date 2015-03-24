@@ -17,6 +17,8 @@ public:
 
     int size();
 
+    int getReusedCount();
+
     friend std::ostream& operator<<(std::ostream &out, const List* list);
 };
 

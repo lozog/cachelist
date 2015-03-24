@@ -68,6 +68,10 @@ int List::size() {
     return sizeOfList;
 }
 
+int List::getReusedCount() {
+    return head->getReusedCount();
+}
+
 // External Method Implementations
 
 std::ostream& operator<<(std::ostream &out, const List* list){

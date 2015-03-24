@@ -6,6 +6,7 @@ class Node;
 class NodeCache {
     Node* head;
     int size;
+    int reusedCount;
 public:
     NodeCache();
     ~NodeCache();
@@ -13,6 +14,8 @@ public:
     void* newNode();
     void recycle(void* mem);
     void empty();
+
+    int getReusedCount();
 };
 
 
