@@ -16,13 +16,8 @@ int main() {
 
     List* list = new List();
 
-    cout << "Commands:" << endl;
-    cout << "insert <int>: Inserts <int> at the front of the list" << endl;
-    cout << "search <int>: Returns the position of <int> in the list, or -1 if <int> is not found" << endl;
-    cout << "remove <int>: Removes <int> from the list, no action if <int> not found" << endl;
-    cout << "exit: quits the program" << endl;
-    cout << "Note: The list allows duplicate entries, but search finds the first occurrence." << endl;
-    
+    cout << "View the readme for usage info." << endl;
+
     string command;
     int data;
     while (std::cin >> command) {
